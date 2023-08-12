@@ -1,6 +1,5 @@
 <script setup>
 import Navbar from './components/Navbar.vue';
-import CountriesList from './components/CountriesList.vue';
 </script>
 
 <template>

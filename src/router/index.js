@@ -1,7 +1,7 @@
 // src/router/index.js
 import { createRouter, createWebHistory } from "vue-router";
 import CountriesList from '../components/CountriesList.vue';
-import CountryDetails from '../components/CountryDetails.vue';
+// import CountryDetails from '../components/CountryDetails.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -12,11 +12,14 @@ const router = createRouter({
       component: CountriesList
     },
     {
-      path: '/list/:details',
+      path: '/:details',
       name: 'details',
-      component: CountryDetails
+      component: CountriesList
     }
-  ]
+  ],
+  scrollBehavior() {
+    document.getElementById("app").scrollIntoView();
+  },
 })
 
 /* const routes = [
@@ -37,9 +40,7 @@ const router = createRouter({
 const router = createRouter({
   history: createWebHistory("/"),
   routes,
-  scrollBehavior() {
-    document.getElementById("app").scrollIntoView();
-  },
+  
 }); */
 
 export default router;
